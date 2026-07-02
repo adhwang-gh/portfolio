@@ -1,3 +1,26 @@
+// ── SCROLL PROGRESS BAR ──
+const scrollProgress = document.getElementById('scrollProgress');
+if (scrollProgress) {
+    const updateProgress = () => {
+        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+        scrollProgress.style.width = pct + '%';
+    };
+    window.addEventListener('scroll', updateProgress);
+    updateProgress();
+}
+
+// ── CARD TILT (mouse-tracking tilt on polaroid cards) ──
+document.querySelectorAll('.polaroid-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = `perspective(800px) rotateY(${x * 10}deg) rotateX(${y * -10}deg) translateY(-6px)`;
+    });
+    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+});
+
 // ── SCROLL REVEAL ──
 const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('revealed'); });
@@ -38,14 +61,14 @@ if (hamburger && navLinksEl) {
     }));
 }
 
-// ── TYPEWRITER (only runs if a #typewriter element exists on the page) ──
-const tw = document.getElementById('typewriter');
-if (tw) {
-    const roles = ['Product Builder', 'Marketing Strategist', 'Operations Thinker', 'AI Explorer'];
-    let ri = 0, ci = 0, deleting = false;
+// ── TYPEWRITER (runs on every element with class "typewriter" and a data-words list) ──
+document.querySelectorAll('.typewriter[data-words]').forEach((tw, idx) => {
+    const words = tw.dataset.words.split('|').map(w => w.trim()).filter(Boolean);
+    if (!words.length) return;
+    let wi = 0, ci = 0, deleting = false;
 
     function type() {
-        const cur = roles[ri];
+        const cur = words[wi];
         if (deleting) {
             tw.textContent = cur.substring(0, ci - 1);
             ci--;
@@ -54,8 +77,8 @@ if (tw) {
             ci++;
         }
         if (!deleting && ci === cur.length) { setTimeout(() => { deleting = true; }, 2200); }
-        else if (deleting && ci === 0) { deleting = false; ri = (ri + 1) % roles.length; }
+        else if (deleting && ci === 0) { deleting = false; wi = (wi + 1) % words.length; }
         setTimeout(type, deleting ? 45 : 85);
     }
-    setTimeout(type, 1300);
-}
+    setTimeout(type, 1300 + idx * 300);
+});
