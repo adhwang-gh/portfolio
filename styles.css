@@ -13,7 +13,7 @@
     --font-script: 'Pinyon Script', cursive;
     --font-body: 'Inter', -apple-system, sans-serif;
 
-    /* ── SEMANTIC TOKENS (derived from the above — reuse these) ── */
+    /* SEMANTIC TOKENS (derived from the above, reuse these) */
     --bg-primary: var(--color-cream);
     --bg-secondary: #F7EEE1;
     --bg-card: rgba(139,75,50,0.04);

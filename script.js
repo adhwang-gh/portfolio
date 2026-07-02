@@ -41,7 +41,7 @@ if (hamburger && navLinksEl) {
 // ── TYPEWRITER (only runs if a #typewriter element exists on the page) ──
 const tw = document.getElementById('typewriter');
 if (tw) {
-    const roles = ['Product Builder', 'Marketing Strategist', 'Ops-Minded Thinker', 'AI Explorer'];
+    const roles = ['Product Builder', 'Marketing Strategist', 'Operations Thinker', 'AI Explorer'];
     let ri = 0, ci = 0, deleting = false;
 
     function type() {
