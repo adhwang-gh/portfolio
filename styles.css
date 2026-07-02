@@ -354,7 +354,7 @@ nav.scrolled {
 .trait-title { color: var(--text-primary); display: block; font-weight: 600; margin-bottom: 2px; font-size: 0.95rem; }
 
 /* ── PROJECTS ── */
-#projects { padding: var(--section-padding) 0; }
+#projects { padding: var(--section-padding) 0; position: relative; }
 
 .projects-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 56px; flex-wrap: wrap; gap: 24px; }
 
@@ -436,7 +436,7 @@ a.polaroid-cta:hover svg { transform: translateX(3px); }
 .tag-rose { background: rgba(184,92,62,0.12); color: var(--color-rust); border: 1px solid rgba(184,92,62,0.3); }
 
 /* ── SKILLS ── */
-#skills { padding: var(--section-padding) 0; background: var(--bg-secondary); }
+#skills { padding: var(--section-padding) 0; background: var(--bg-secondary); position: relative; }
 
 .skills-content { margin-top: 56px; }
 .skill-category { margin-bottom: 44px; }
@@ -481,6 +481,13 @@ a.polaroid-cta:hover svg { transform: translateX(3px); }
 .contact-info-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 700; line-height: 1.2; margin-bottom: 20px; }
 .contact-info-desc { color: var(--text-secondary); line-height: 1.85; margin-bottom: 40px; font-size: 1.02rem; }
 
+.contact-photo {
+    max-width: 200px; margin-top: 12px; border-radius: var(--radius-md);
+    overflow: hidden; box-shadow: 0 20px 40px rgba(139,75,50,0.22);
+    transform: rotate(-3deg);
+}
+.contact-photo img { width: 100%; display: block; aspect-ratio: 3 / 4; object-fit: cover; filter: saturate(0.94); }
+
 .contact-form {
     background: var(--bg-card); border: 1px solid var(--border);
     border-radius: var(--radius-lg); padding: 40px; position: relative; overflow: hidden;
@@ -488,6 +495,17 @@ a.polaroid-cta:hover svg { transform: translateX(3px); }
 .contact-form::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--accent-gradient); }
 
 .form-submit { width: 100%; justify-content: center; padding: 16px; font-size: 0.98rem; }
+
+/* ── SCATTERED DOODLES (scrapbook accents, tie the sections together) ── */
+.doodle {
+    position: absolute; pointer-events: none; z-index: 1;
+    filter: drop-shadow(0 8px 14px rgba(139,75,50,0.16));
+    opacity: 0.92;
+}
+.doodle--about { width: 78px; top: 18px; right: 6%; transform: rotate(8deg); }
+.doodle--projects { width: 58px; top: -6px; left: 2%; transform: rotate(-10deg); }
+.doodle--skills { width: 64px; top: 4px; right: 3%; transform: rotate(9deg); }
+.doodle--contact { width: 66px; bottom: 4%; left: 1%; transform: rotate(-6deg); }
 
 /* ── FOOTER ── */
 footer { padding: 32px 0; border-top: 1px solid var(--border); background: var(--bg-secondary); }
@@ -644,6 +662,9 @@ footer { padding: 32px 0; border-top: 1px solid var(--border); background: var(-
 
 @media (max-width: 768px) {
     :root { --section-padding: 80px; }
+    .doodle { width: 44px !important; }
+    .doodle--about { top: 4px; right: 4%; }
+    .doodle--skills { top: -4px; right: 2%; }
     .nav-links {
         display: none; position: fixed; inset: 0; top: var(--nav-height);
         background: rgba(253,249,243,0.97); backdrop-filter: blur(20px);
