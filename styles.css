@@ -482,11 +482,19 @@ a.polaroid-cta:hover svg { transform: translateX(3px); }
 .contact-info-desc { color: var(--text-secondary); line-height: 1.85; margin-bottom: 40px; font-size: 1.02rem; }
 
 .contact-photo {
+    position: relative;
     max-width: 200px; margin-top: 12px; border-radius: var(--radius-md);
-    overflow: hidden; box-shadow: 0 20px 40px rgba(139,75,50,0.22);
+    box-shadow: 0 20px 40px rgba(139,75,50,0.22);
     transform: rotate(-3deg);
 }
-.contact-photo img { width: 100%; display: block; aspect-ratio: 3 / 4; object-fit: cover; filter: saturate(0.94); }
+.contact-photo img:first-child { width: 100%; display: block; aspect-ratio: 3 / 4; object-fit: cover; filter: saturate(0.94); border-radius: var(--radius-md); }
+.contact-photo-flower-frame {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: fill;
+    filter: drop-shadow(0 8px 16px rgba(139,75,50,0.22));
+    pointer-events: none;
+}
 
 .contact-form {
     background: var(--bg-card); border: 1px solid var(--border);
