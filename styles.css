@@ -106,7 +106,6 @@ body {
 .reveal-delay-1 { transition-delay: 0.1s; }
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
 
 /* ── NAVIGATION ── */
 nav {
@@ -383,16 +382,6 @@ nav.scrolled {
 }
 .contact-form::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--accent-gradient); }
 
-.form-group { margin-bottom: 22px; }
-.form-label { display: block; font-family: var(--font-display); font-size: 0.82rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 8px; letter-spacing: 0.02em; }
-.form-input, .form-textarea {
-    width: 100%; background: rgba(139,75,50,0.03); border: 1px solid var(--border);
-    border-radius: var(--radius-sm); padding: 13px 16px; color: var(--text-primary);
-    font-family: var(--font-body); font-size: 0.95rem; transition: var(--transition); outline: none;
-}
-.form-input:focus, .form-textarea:focus { border-color: rgba(139,75,50,0.5); background: rgba(139,75,50,0.05); box-shadow: 0 0 0 3px rgba(139,75,50,0.1); }
-.form-input::placeholder, .form-textarea::placeholder { color: var(--text-muted); }
-.form-textarea { resize: vertical; min-height: 120px; }
 .form-submit { width: 100%; justify-content: center; padding: 16px; font-size: 0.98rem; }
 
 /* ── FOOTER ── */
@@ -527,7 +516,6 @@ footer { padding: 32px 0; border-top: 1px solid var(--border); background: var(-
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 @keyframes scrollPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.6; transform: scale(0.85); } }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
