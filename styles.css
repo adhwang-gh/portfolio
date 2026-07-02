@@ -377,14 +377,6 @@ nav.scrolled {
 .contact-info-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 700; line-height: 1.2; margin-bottom: 20px; }
 .contact-info-desc { color: var(--text-secondary); line-height: 1.85; margin-bottom: 40px; font-size: 1.02rem; }
 
-.social-links { display: flex; gap: 12px; }
-.social-link {
-    width: 48px; height: 48px; border-radius: var(--radius-sm); border: 1px solid var(--border);
-    display: flex; align-items: center; justify-content: center;
-    color: var(--text-secondary); text-decoration: none; font-size: 1.15rem; transition: var(--transition);
-}
-.social-link:hover { background: rgba(139,75,50,0.08); border-color: rgba(139,75,50,0.4); color: var(--color-terracotta); transform: translateY(-3px); }
-
 .contact-form {
     background: var(--bg-card); border: 1px solid var(--border);
     border-radius: var(--radius-lg); padding: 40px; position: relative; overflow: hidden;
