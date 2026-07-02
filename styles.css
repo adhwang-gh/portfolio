@@ -179,7 +179,7 @@ nav.scrolled {
 
 .hero-grid {
     display: grid; grid-template-columns: 1fr 1fr;
-    gap: 40px; align-items: start;
+    gap: 40px; align-items: center;
 }
 
 .hero-content {
@@ -189,7 +189,7 @@ nav.scrolled {
 
 .hero-photo-wrap {
     position: relative; z-index: 1; display: flex; justify-content: center;
-    padding-top: calc(var(--nav-height) + 24px);
+    padding-top: calc(var(--nav-height) + 48px);
 }
 
 .hero-photo-frame {
@@ -595,7 +595,6 @@ footer { padding: 32px 0; border-top: 1px solid var(--border); background: var(-
     .contact-grid { grid-template-columns: 1fr; gap: 48px; }
     .hero-blob-2 { right: -180px; }
     .hero-grid { grid-template-columns: 1fr 320px; gap: 24px; }
-    .hero-photo-wrap { padding-top: calc(var(--nav-height) + 8px); }
     .hero-photo-frame { max-width: 320px; }
 }
 
