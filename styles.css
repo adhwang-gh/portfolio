@@ -510,10 +510,10 @@ a.polaroid-cta:hover svg { transform: translateX(3px); }
     filter: drop-shadow(0 8px 14px rgba(139,75,50,0.16));
     opacity: 0.92;
 }
-.doodle--about { width: 78px; top: 18px; right: 6%; transform: rotate(8deg); }
-.doodle--projects { width: 58px; top: -6px; left: 2%; transform: rotate(-10deg); }
-.doodle--skills { width: 64px; top: 4px; right: 3%; transform: rotate(9deg); }
-.doodle--contact { width: 66px; bottom: 4%; left: 1%; transform: rotate(-6deg); }
+.doodle--about { width: 118px; top: 8px; right: 6%; transform: rotate(8deg); clip-path: inset(0 4% 4% 0); }
+.doodle--projects { width: 90px; top: -14px; left: 2%; transform: rotate(-10deg); clip-path: inset(0 0 14% 0); }
+.doodle--skills { width: 98px; top: -6px; right: 3%; transform: rotate(9deg); }
+.doodle--contact { width: 100px; bottom: 3%; left: 1%; transform: rotate(-6deg); }
 
 /* ── FOOTER ── */
 footer { padding: 32px 0; border-top: 1px solid var(--border); background: var(--bg-secondary); }
@@ -670,8 +670,8 @@ footer { padding: 32px 0; border-top: 1px solid var(--border); background: var(-
 
 @media (max-width: 768px) {
     :root { --section-padding: 80px; }
-    .doodle { width: 44px !important; }
-    .doodle--about { top: 4px; right: 4%; }
+    .doodle { width: 66px !important; }
+    .doodle--about { top: 2px; right: 4%; }
     .doodle--skills { top: -4px; right: 2%; }
     .nav-links {
         display: none; position: fixed; inset: 0; top: var(--nav-height);
