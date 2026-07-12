@@ -341,48 +341,30 @@ nav.scrolled {
     background: radial-gradient(circle, rgba(244,198,198,0.3), transparent 70%); pointer-events: none;
 }
 
-/* ── PROCESS LIST ── */
-.process-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
-.process-step {
-    display: grid;
-    grid-template-columns: 36px 18px 1fr;
-    align-items: flex-start;
-    gap: 0 10px;
-    position: relative;
-}
-.process-number {
+/* ── BIO CALLOUTS ── */
+.bio-callouts { display: flex; flex-direction: column; gap: 0; }
+.bio-callout { display: flex; align-items: flex-start; gap: 16px; padding: 20px 0; }
+.bio-callout-num {
     font-family: var(--font-display);
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: 700;
+    letter-spacing: 0.1em;
     color: var(--color-terracotta);
-    opacity: 0.55;
-    letter-spacing: 0.08em;
-    padding-top: 2px;
-    text-align: right;
+    opacity: 0.5;
+    padding-top: 4px;
+    flex-shrink: 0;
 }
-.process-connector {
-    width: 1px;
-    background: rgba(139,75,50,0.18);
-    align-self: stretch;
-    margin: 6px auto 0;
-    min-height: 32px;
-}
-.process-body {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    padding-bottom: 22px;
-}
-.process-step--last .process-body { padding-bottom: 0; }
-.process-title {
-    font-weight: 600;
-    font-size: 0.95rem;
+.bio-callout-text {
+    font-size: 0.98rem;
+    line-height: 1.65;
     color: var(--text-primary);
+    margin: 0;
+    font-weight: 400;
 }
-.process-desc {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    line-height: 1.55;
+.bio-callout-rule {
+    height: 1px;
+    background: rgba(139,75,50,0.12);
+    margin: 0;
 }
 
 /* ── PROJECTS ── */
